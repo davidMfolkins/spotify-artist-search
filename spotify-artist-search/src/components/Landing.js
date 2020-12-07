@@ -32,8 +32,8 @@ function Landing() {
   useEffect(() => {
     const URL = `https://api.spotify.com/v1/search?q=${query}&type=artist`;
     axios.get(URL, config).then(response => {
-      console.log("respone", response.data.artists);
-
+      console.log("response", response.data.artists.items);
+      setResults([...response.data.artists.items])
     });
   }, [query])
 
