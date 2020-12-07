@@ -1,7 +1,8 @@
 import './Landing.scss';
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import axios from 'axios'
 import Searchbar from './Searchbar'
+import Results from './Results'
 
 export const authUrl = 'https://accounts.spotify.com/authorize';
 
@@ -57,6 +58,7 @@ function Landing() {
       {token && (
         <Searchbar onSearch={query => setQuery(query)} />
       )}
+      <Results />
     </div>
   );
 }
