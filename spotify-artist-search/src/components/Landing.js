@@ -21,41 +21,44 @@ const hash = window.location.hash
   }, {});
 window.location.hash = "";
 
- function Landing() {
-    const [token, setToken] = useState(null)
-    const [value, setValue] = useState("")
+function Landing() {
+  const [token, setToken] = useState(null)
+  const [query, setQuery] = useState("")
   const [results, setResults] = useState("")
 
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
   useEffect(() => {
-    const testURL = `https://api.spotify.com/v1/search?q=${value}&type=artist`;
-    axios.get(testURL).then(response => {
-      console.log(response.data.results);
-      setResults([...response.data.results])
+    const URL = `https://api.spotify.com/v1/search?q=${query}&type=artist`;
+    axios.get(URL, config).then(response => {
+      console.log("respone", response.data.artists);
+
     });
-  }, [value])
+  }, [query])
 
   useEffect(() => {
     let _token = hash.access_token;
     if (_token) {
       setToken(_token)
     }
-  }) 
-    
-    return (
-      <div className="Landing">
-        {!token && (
-          <a
-            className="btn btn--loginApp-link"
-            href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}
-          >
-            Login to Spotify
-          </a>
-        )}
-        {token && (
-          <Searchbar />
-        )}
-      </div>
-    );
+  })
+
+  return (
+    <div className="Landing">
+      {!token && (
+        <a
+          className="btn btn--loginApp-link"
+          href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}
+        >
+          Login to Spotify
+        </a>
+      )}
+      {token && (
+        <Searchbar onSearch={query => setQuery(query)} />
+      )}
+    </div>
+  );
 }
 
 export default Landing;
