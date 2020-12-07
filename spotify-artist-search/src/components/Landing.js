@@ -2,7 +2,7 @@ import './Landing.scss';
 
 function Landing() {
   return (
-    <div className="App">
+    <div className="Landing">
       <button>Login</button>
     </div>
   );
