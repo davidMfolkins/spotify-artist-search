@@ -1,5 +1,6 @@
 import './Landing.scss';
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 import Searchbar from './Searchbar'
 
 export const authUrl = 'https://accounts.spotify.com/authorize';
@@ -20,39 +21,44 @@ const hash = window.location.hash
   }, {});
 window.location.hash = "";
 
-class Landing extends Component {
-  constructor() {
-    super();
-    this.state = {
-      token: null
-    }
-  }
-  componentDidMount() {
+function Landing() {
+  const [token, setToken] = useState(null)
+  const [query, setQuery] = useState("")
+  const [results, setResults] = useState("")
+
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
+  useEffect(() => {
+    const URL = `https://api.spotify.com/v1/search?q=${query}&type=artist`;
+    axios.get(URL, config).then(response => {
+      console.log("response", response.data.artists.items);
+      setResults([...response.data.artists.items])
+    });
+  }, [query])
+
+  useEffect(() => {
     let _token = hash.access_token;
- 
     if (_token) {
-      this.setState({
-        token: _token
-      });
+      setToken(_token)
     }
-  }
-  render() {
-    return (
-      <div className="Landing">
-        {!this.state.token && (
-          <a
-            className="btn btn--loginApp-link"
-            href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}
-          >
-            Login to Spotify
-          </a>
-        )}
-        {this.state.token && (
-          <Searchbar />
-        )}
-      </div>
-    );
-  }
+  })
+
+  return (
+    <div className="Landing">
+      {!token && (
+        <a
+          className="btn btn--loginApp-link"
+          href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}
+        >
+          Login to Spotify
+        </a>
+      )}
+      {token && (
+        <Searchbar onSearch={query => setQuery(query)} />
+      )}
+    </div>
+  );
 }
 
 export default Landing;
