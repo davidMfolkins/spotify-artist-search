@@ -6,8 +6,14 @@ function Results(props) {
   const { results } = props
   
   const result = results.map(artist => {
-    console.log(artist)
-    return artist.name
+    return (
+      <div className="artists">
+        <img src={artist.images[1] && artist.images[1].url} alt={artist.name} />
+        <div>{artist.name}</div>
+        <div>{artist.followers.total} followers</div>
+        <div>{artist.popularity} popularity</div>
+      </div>
+      )
   })
   return (
     <div className="Results">
