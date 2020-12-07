@@ -4,6 +4,7 @@ import './index.css';
 import Landing from './components/Landing';
 import Navbar from './components/Navbar';
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Navbar />
