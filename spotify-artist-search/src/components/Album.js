@@ -7,7 +7,9 @@ function Album(props) {
   console.log(album)
   return (
     <div className="Album">
-      <div></div>
+      <div>{album.name}</div>
+      <div>Released on {album.release_date}</div>
+      <div>{album.total_tracks} tracks</div>
     </div>
   );
 }
