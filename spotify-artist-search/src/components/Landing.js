@@ -1,5 +1,6 @@
 import './Landing.scss';
 import React, { Component } from 'react';
+import Searchbar from './Searchbar'
 
 export const authUrl = 'https://accounts.spotify.com/authorize';
 
@@ -47,7 +48,7 @@ class Landing extends Component {
           </a>
         )}
         {this.state.token && (
-          console.log("hello")
+          <Searchbar />
         )}
       </div>
     );

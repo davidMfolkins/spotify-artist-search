@@ -9,7 +9,6 @@ ReactDOM.render(
   <React.StrictMode>
     <Navbar />
     <Landing />
-    <Searchbar />
   </React.StrictMode>,
   document.getElementById('root')
 );
