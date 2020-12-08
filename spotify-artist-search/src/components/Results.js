@@ -6,20 +6,23 @@ import './Results.scss';
 function Results(props) {
   const { results, token } = props
   const [id, setId] = useState("")
-  const [album, setAlbum] = useState([])
+  const [albums, setAlbums] = useState([])
 
   useEffect(() => {
     if (results[0] && results[0].id) {
       setId(results[0].id)
     }
   })
-  const albumDisplay = function () {
+
+  const albumDisplay = async function () {
+    console.log("hello")
     const config = {
       headers: { Authorization: `Bearer ${token}` }
     };
     const URL = `https://api.spotify.com/v1/artists/${id}/albums`;
-    axios.get(URL, config).then(response => {
-      setAlbum(response.data.items[0])
+    await axios.get(URL, config).then(response => {
+      setAlbums(response.data.items)
+      console.log(setAlbums)
     });
   }
   const result = results.map(artist => {
@@ -35,7 +38,7 @@ function Results(props) {
   return (
     <div className="Results">
       {result}
-      <Album album={album} />
+      <Album albums={albums} />
     </div>
   );
 }
