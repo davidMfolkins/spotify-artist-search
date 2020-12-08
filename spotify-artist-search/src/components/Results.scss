@@ -3,9 +3,19 @@
   margin: 5px;
   padding: 5px;
   cursor: pointer;
+  text-align: center;
 }
 
 .results {
   display: flex;
-  width: 300px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: auto;
+}
+
+.resultImages {
+  width: 200px;
+  height: 200px;
 }

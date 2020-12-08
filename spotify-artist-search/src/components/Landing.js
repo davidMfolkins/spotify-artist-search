@@ -48,7 +48,7 @@ function Landing() {
 
   return (
     <div className="landing">
-      <div className="test">
+      <div className="loginSearch">
       {!token && (
         <a className="buttonContainer" href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}>
           <p>
