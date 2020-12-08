@@ -48,6 +48,7 @@ function Landing() {
 
   return (
     <div className="landing">
+      <div className="test">
       {!token && (
         <a className="buttonContainer" href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}>
           <p>
@@ -56,7 +57,6 @@ function Landing() {
           <img className="spotifyLogo" src={logo} />
         </a>
       )}
-      <div>
       {token && (
         <Searchbar onSearch={query => setQuery(query)} />
       )}
