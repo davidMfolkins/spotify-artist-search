@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+  height: 60px;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1DB954;
+}
+
+.navTitle {
+  font-size: 40px;
+}
