@@ -56,10 +56,14 @@ function Landing() {
           <img className="spotifyLogo" src={logo} />
         </a>
       )}
+      <div>
       {token && (
         <Searchbar onSearch={query => setQuery(query)} />
       )}
+      </div>
+      <div>
       <Results results={results} token={token} />
+      </div>
     </div>
   );
 }
