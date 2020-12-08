@@ -2,8 +2,8 @@ import './Navbar.scss';
 
 function Navbar() {
   return (
-    <div className="Navbar">
-      <div>Spotify Artist Search</div>
+    <div className="navbar">
+      <div className="navTitle">Spotify Artist Search</div>
     </div>
   );
 }
