@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   align-items: center;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #191414;
   height: 60px;
   padding: 10px 20px;
   position: fixed;
@@ -12,4 +12,5 @@
 
 .navTitle {
   font-size: 40px;
+  color: #191414;
 }
