@@ -7,7 +7,7 @@ function Results(props) {
   let { results, token } = props
   const [id, setId] = useState("")
   const [albums, setAlbums] = useState([])
-
+  console.log(results)
   useEffect(() => {
     if (results[0] && results[0].id) {
       setId(results[0].id)
@@ -30,7 +30,7 @@ function Results(props) {
           <img className="resultImages" src={artist.images[1] && artist.images[1].url} alt="No image available" />
           <div className="artistName">{artist.name}</div>
           <div>{artist.followers.total.toLocaleString()} followers</div>
-          <div>{artist.popularity} popularity</div>
+          <div>Rating {artist.popularity}/100</div>
         </div>
     )
   })
