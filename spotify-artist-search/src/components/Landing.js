@@ -1,8 +1,10 @@
 import './Landing.scss';
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import axios from 'axios'
 import Searchbar from './Searchbar'
 import Results from './Results'
+import logo from '../images/Spotify_Logo.png'
+
 
 export const authUrl = 'https://accounts.spotify.com/authorize';
 
@@ -45,19 +47,19 @@ function Landing() {
   })
 
   return (
-    <div className="Landing">
+    <div className="landing">
       {!token && (
-        <a
-          className="btn btn--loginApp-link"
-          href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}
-        >
-          Login to Spotify
+        <a className="buttonContainer" href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}>
+          <p>
+            Login
+          </p>
+          <img className="spotifyLogo" src={logo} />
         </a>
       )}
       {token && (
         <Searchbar onSearch={query => setQuery(query)} />
       )}
-      <Results results={results} token={token}/>
+      <Results results={results} token={token} />
     </div>
   );
 }
