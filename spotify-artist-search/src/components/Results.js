@@ -21,8 +21,7 @@ function Results(props) {
     };
     const URL = `https://api.spotify.com/v1/artists/${id}/albums`;
     await axios.get(URL, config).then(response => {
-      setAlbums(response.data.items)
-      console.log(setAlbums)
+      setAlbums([...response.data.items])
     });
   }
   const result = results.map(artist => {
