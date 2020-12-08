@@ -1,5 +1,28 @@
-.albums {
-  border: 1px solid black;
-  padding: 5px;
-  margin: 5px;
+.album {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+.albums {
+border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  text-align: left;
+  word-wrap: break-word;
+  width: 250px;
+}
+.albums:hover {
+  box-shadow: 3px 3px #1DB954;
+}
+.albumName {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.albumImages {
+  width: 250px;
+  height: 250px;
+}
+
