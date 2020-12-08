@@ -23,6 +23,7 @@ function Searchbar(props) {
             type="text"
             name="search"
             placeholder="Search for an artist..."
+            spellcheck="false"
             value={value}
             onChange={event => setValue(event.target.value)}
           />

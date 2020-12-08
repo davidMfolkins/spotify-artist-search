@@ -3,7 +3,13 @@
   margin: 5px;
   padding: 5px;
   cursor: pointer;
-  text-align: center;
+  text-align: left;
+  word-wrap: break-word;
+  width: 250px;
+}
+
+.artists:hover {
+  box-shadow: 3px 3px #1DB954;
 }
 
 .results {
@@ -12,7 +18,12 @@
   justify-content: center;
 }
 
+.artistName {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 .resultImages {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
 }

@@ -28,8 +28,8 @@ function Results(props) {
     return (
         <div className="artists" onClick={e => albumDisplay()}>
           <img className="resultImages" src={artist.images[1] && artist.images[1].url} alt="No image available" />
-          <div>{artist.name}</div>
-          <div>{artist.followers.total} followers</div>
+          <div className="artistName">{artist.name}</div>
+          <div>{artist.followers.total.toLocaleString()} followers</div>
           <div>{artist.popularity} popularity</div>
         </div>
     )
