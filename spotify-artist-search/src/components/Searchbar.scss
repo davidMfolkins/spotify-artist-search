@@ -8,6 +8,7 @@
   padding: 10px 25px;
   width: 300px;
   border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .searchBar {
@@ -16,6 +17,16 @@
   border: 0;
 }
 
+.searchBar:focus {
+  outline: none;
+}
+
 .searchIcon {
   width: 30px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
