@@ -1,5 +1,5 @@
 import './Landing.scss';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import Searchbar from './Searchbar'
 import Results from './Results'
@@ -57,7 +57,7 @@ function Landing() {
       {token && (
         <Searchbar onSearch={query => setQuery(query)} />
       )}
-      <Results results={results}/>
+      <Results results={results} token={token}/>
     </div>
   );
 }
