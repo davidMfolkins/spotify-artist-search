@@ -33,9 +33,10 @@ function Landing() {
     headers: { Authorization: `Bearer ${token}` }
   };
   useEffect(() => {
-    const URL = `https://api.spotify.com/v1/search?q=${query}&type=artist`;
+    const URL = `https://api.spotify.com/v1/search?q=${query}&limit=5&type=artist`;
     axios.get(URL, config).then(response => {
       setResults([...response.data.artists.items])
+      console.log(results)
     });
   }, [query])
 
