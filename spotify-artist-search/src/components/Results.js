@@ -26,12 +26,12 @@ function Results(props) {
   }
   const result = results.map(artist => {
     return (
-        <div className="artists" onClick={e => albumDisplay()}>
-          <img className="resultImages" src={artist.images[1] && artist.images[1].url} alt="No image available" />
-          <div className="artistName">{artist.name}</div>
-          <div>{artist.followers.total.toLocaleString()} followers</div>
-          <div>Rating {artist.popularity}/100</div>
-        </div>
+      <div className="artists" onClick={e => albumDisplay()}>
+        <img className="resultImages" src={artist.images[1] && artist.images[1].url} alt="No image available" />
+        <div className="artistName">{artist.name}</div>
+        <div>{artist.followers.total.toLocaleString()} followers</div>
+        <div>Rating {artist.popularity}/100</div>
+      </div>
     )
   })
   return (

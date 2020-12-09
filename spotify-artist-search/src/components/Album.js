@@ -11,7 +11,7 @@ function Album(props) {
         <div className="albumName">{album.name}</div>
         <div>Released on {album.release_date}</div>
         <div>{album.total_tracks} tracks</div>
-        <a href={album.external_urls.spotify} target="_blank">PREVIEW</a>
+        <a href={album.external_urls.spotify} target="_blank" rel="noreferrer">PREVIEW</a>
       </div>
     )
   })
