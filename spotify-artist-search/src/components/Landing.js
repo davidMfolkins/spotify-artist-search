@@ -36,7 +36,7 @@ function Landing() {
     const URL = `https://api.spotify.com/v1/search?q=${query}&limit=5&type=artist`;
     axios.get(URL, config).then(response => {
       setResults([...response.data.artists.items])
-      
+
     });
   }, [query])
 
@@ -50,20 +50,20 @@ function Landing() {
   return (
     <div className="landing">
       <div className="loginSearch">
-      {!token && (
-        <a className="buttonContainer" href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}>
-          <p>
-            Login
+        {!token && (
+          <a className="buttonContainer" href={`${authUrl}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}>
+            <p>
+              Login
           </p>
-          <img className="spotifyLogo" src={logo} alt="spotify-logo"/>
-        </a>
-      )}
-      {token && (
-        <Searchbar onSearch={query => setQuery(query)} />
-      )}
+            <img className="spotifyLogo" src={logo} alt="spotify-logo" />
+          </a>
+        )}
+        {token && (
+          <Searchbar onSearch={query => setQuery(query)}/>
+        )}
       </div>
       <div>
-      <Results results={results} token={token} />
+        <Results results={results} token={token}/>
       </div>
     </div>
   );

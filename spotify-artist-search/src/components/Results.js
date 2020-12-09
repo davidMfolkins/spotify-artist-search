@@ -13,13 +13,14 @@ function Results(props) {
     if (results[0] && results[0].id) {
       setId(results[0].id)
     }
-  })
+  });
  
   const albumDisplay = async function () {
     console.log("hello")
     const config = {
       headers: { Authorization: `Bearer ${token}` }
     };
+
     const URL = `https://api.spotify.com/v1/artists/${id}/albums`;
     await axios.get(URL, config).then(response => {
       setAlbums([...response.data.items])

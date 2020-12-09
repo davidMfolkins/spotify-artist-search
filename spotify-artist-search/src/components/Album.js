@@ -15,6 +15,7 @@ function Album(props) {
       </div>
     )
   })
+
   return (
     <div className="album">
       {allAlbums}
