@@ -7,13 +7,14 @@ function Results(props) {
   let { results, token } = props
   const [id, setId] = useState("")
   const [albums, setAlbums] = useState([])
-  console.log(results)
+  const [show, setShow] = useState(false)
+
   useEffect(() => {
     if (results[0] && results[0].id) {
       setId(results[0].id)
     }
   })
-
+ 
   const albumDisplay = async function () {
     console.log("hello")
     const config = {
@@ -22,6 +23,7 @@ function Results(props) {
     const URL = `https://api.spotify.com/v1/artists/${id}/albums`;
     await axios.get(URL, config).then(response => {
       setAlbums([...response.data.items])
+      setShow(true)
     });
   }
   const result = results.map(artist => {
@@ -34,10 +36,17 @@ function Results(props) {
       </div>
     )
   })
+
+  const resultDisplay = function() {
+    if (show) {
+      return <Album albums={albums} />
+    } else {
+      return result
+    }
+  }
   return (
     <div className="results">
-      {result}
-      <Album albums={albums} />
+      {resultDisplay()}
     </div>
   );
 }
