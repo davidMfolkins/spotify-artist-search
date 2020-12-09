@@ -17,8 +17,11 @@ function Album(props) {
   })
 
   return (
-    <div className="album">
-      {allAlbums}
+    <div>
+      <div className="albumTitle">Albums</div>
+      <div className="album">
+        {allAlbums}
+      </div>
     </div>
   );
 }
