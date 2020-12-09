@@ -29,3 +29,15 @@
 .spotifyLogo {
   width: 45px;
 }
+
+@media only screen and (max-width: 768px) { 
+  .loginSearch {
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (max-width: 400px) { 
+  .loginSearch {
+    margin-top: 30%;
+  }
+}

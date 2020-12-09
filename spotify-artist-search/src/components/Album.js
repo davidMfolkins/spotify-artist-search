@@ -11,14 +11,17 @@ function Album(props) {
         <div className="albumName">{album.name}</div>
         <div>Released on {album.release_date}</div>
         <div>{album.total_tracks} tracks</div>
-        <a href={album.external_urls.spotify} target="_blank" rel="noreferrer">PREVIEW</a>
+        <div className="previewLink"><a href={album.external_urls.spotify} target="_blank" rel="noreferrer">PREVIEW</a></div>
       </div>
     )
   })
 
   return (
-    <div className="album">
-      {allAlbums}
+    <div>
+      <div className="albumTitle">Albums</div>
+      <div className="album">
+        {allAlbums}
+      </div>
     </div>
   );
 }

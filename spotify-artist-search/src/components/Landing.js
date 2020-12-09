@@ -28,12 +28,13 @@ function Landing() {
   const [token, setToken] = useState(null)
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
+  const [show, setShow] = useState(false)
 
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   };
   useEffect(() => {
-    const URL = `https://api.spotify.com/v1/search?q=${query}&limit=5&type=artist`;
+    const URL = `https://api.spotify.com/v1/search?q=${query}&type=artist`;
     axios.get(URL, config).then(response => {
       setResults([...response.data.artists.items])
 
@@ -59,11 +60,11 @@ function Landing() {
           </a>
         )}
         {token && (
-          <Searchbar onSearch={query => setQuery(query)}/>
+          <Searchbar onSearch={query => setQuery(query)} />
         )}
       </div>
       <div>
-        <Results results={results} token={token}/>
+        <Results results={results} token={token} />
       </div>
     </div>
   );
