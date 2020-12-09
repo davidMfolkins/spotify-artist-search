@@ -1,5 +1,5 @@
+import icon from '../images/Spotify_Icon_Black.png';
 import './Navbar.scss';
-import icon from '../images/Spotify_Icon_Black.png'
 
 function Navbar() {
   return (

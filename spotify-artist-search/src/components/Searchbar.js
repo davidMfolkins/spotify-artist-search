@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import useDebounce from '../hooks/useDebounce';
 import searchIcon from '../images/Search_Icon.png';
-
 import './Searchbar.scss';
 
 function Searchbar(props) {
