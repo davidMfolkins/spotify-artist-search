@@ -1,3 +1,5 @@
+@import "Helpers";
+
 .loginSearch {
   display: flex;
   justify-content: center;
@@ -9,8 +11,8 @@
   justify-content: space-around;
   align-items: center;
   background-color: white; 
-  color: #191414; 
-  border: 2px solid #1DB954;
+  color: $black; 
+  border: 2px solid $green;
   font-size: 30px;
   padding: 10px 25px;
   width: 250px;
@@ -20,7 +22,7 @@
 }
 
 .buttonContainer:hover {
-  box-shadow: 5px 5px #1DB954;
+  box-shadow: 5px 5px $green;
 }
 
 .spotifyLogo {

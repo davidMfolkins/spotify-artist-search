@@ -1,3 +1,5 @@
+@import "Helpers";
+
 .artists {
   border: 1px solid black;
   margin: 5px;
@@ -9,7 +11,7 @@
 }
 
 .artists:hover {
-  box-shadow: 3px 3px #1DB954;
+  box-shadow: 3px 3px $green;
 }
 
 .results {

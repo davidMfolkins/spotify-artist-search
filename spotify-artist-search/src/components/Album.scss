@@ -1,3 +1,5 @@
+@import "Helpers";
+
 .album {
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +16,7 @@
   width: 250px;
 }
 .albums:hover {
-  box-shadow: 3px 3px #1DB954;
+  box-shadow: 3px 3px $green;
 }
 .albumName {
   font-size: 20px;

@@ -1,5 +1,5 @@
 import './Landing.scss';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import Searchbar from './Searchbar'
 import Results from './Results'
@@ -36,7 +36,7 @@ function Landing() {
     const URL = `https://api.spotify.com/v1/search?q=${query}&limit=5&type=artist`;
     axios.get(URL, config).then(response => {
       setResults([...response.data.artists.items])
-      console.log(results)
+      
     });
   }, [query])
 
@@ -55,7 +55,7 @@ function Landing() {
           <p>
             Login
           </p>
-          <img className="spotifyLogo" src={logo} />
+          <img className="spotifyLogo" src={logo} alt="spotify-logo"/>
         </a>
       )}
       {token && (

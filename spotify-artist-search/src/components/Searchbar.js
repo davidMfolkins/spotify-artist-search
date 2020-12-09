@@ -28,7 +28,7 @@ function Searchbar(props) {
             onChange={event => setValue(event.target.value)}
           />
         </form>
-        <img className="searchIcon" src={searchIcon} />
+        <img className="searchIcon" src={searchIcon} alt="search-icon" />
     </div>
   );
 }
