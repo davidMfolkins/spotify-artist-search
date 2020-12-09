@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import Searchbar from './Searchbar'
 import Results from './Results'
-import logo from '../images/Spotify_Logo.png'
+import icon from '../images/Spotify_Icon_Green.png'
 
 
 export const authUrl = 'https://accounts.spotify.com/authorize';
@@ -28,7 +28,6 @@ function Landing() {
   const [token, setToken] = useState(null)
   const [query, setQuery] = useState("")
   const [results, setResults] = useState([])
-  const [show, setShow] = useState(false)
 
   const config = {
     headers: { Authorization: `Bearer ${token}` }
@@ -56,7 +55,7 @@ function Landing() {
             <p>
               Login
           </p>
-            <img className="spotifyLogo" src={logo} alt="spotify-logo" />
+            <img className="spotifyIcon" src={icon} alt="spotify-icon" />
           </a>
         )}
         {token && (
