@@ -16,7 +16,6 @@ function Results(props) {
   });
  
   const albumDisplay = async function () {
-    console.log("hello")
     const config = {
       headers: { Authorization: `Bearer ${token}` }
     };

@@ -17,11 +17,12 @@
 
 .albums {
   border: 1px solid $black;
+  border-radius: 5px;
+  background-color: white;
   margin: 15px 5px;
   padding: 5px;
   cursor: pointer;
   text-align: left;
-  word-wrap: break-word;
   width: 250px;
   font-family: $font;
 }
@@ -29,10 +30,14 @@
   box-shadow: 3px 3px $green;
 }
 .albumName {
-  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; 
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 10px;
 }
+
 .albumImages {
   width: 250px;
   height: 250px;
