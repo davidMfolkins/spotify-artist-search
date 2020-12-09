@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useEffect, useState } from 'react'
+import axios from 'axios';
 import Album from './Album';
 import './Results.scss';
 
 function Results(props) {
-  let { results, token } = props
-  const [id, setId] = useState("")
-  const [albums, setAlbums] = useState([])
-  const [show, setShow] = useState(false)
+  let { results, token } = props;
+  const [id, setId] = useState("");
+  const [albums, setAlbums] = useState([]);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (results[0] && results[0].id) {
-      setId(results[0].id)
+      setId(results[0].id);
     }
   });
  
@@ -22,8 +22,8 @@ function Results(props) {
 
     const URL = `https://api.spotify.com/v1/artists/${id}/albums`;
     await axios.get(URL, config).then(response => {
-      setAlbums([...response.data.items])
-      setShow(true)
+      setAlbums([...response.data.items]);
+      setShow(true);
     });
   }
   const result = results.map(artist => {
