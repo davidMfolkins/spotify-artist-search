@@ -18,3 +18,8 @@ A React single page application (SPA) for searching artists and viewing their al
 - React
 - Node-Sass
 - Axios
+
+## Issues
+- After clicking on album, user cannot search for a new artist and must refresh the app to search a new artist
+- Spotify's api gives some broken images for artist and album artwork
+- Spotify's api will sometimes give duplicate results because of some minor difference in content
