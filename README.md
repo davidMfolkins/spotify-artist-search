@@ -11,7 +11,7 @@ A React single page application (SPA) for searching artists and viewing their al
 
 ## Functionality
 
-- Users can login to using their spotify account
+- Users can login using the account associated with their spotify account
 - Once logged in, users can search for any artist on spotify. Search results update on key press
 - Users can select an artist to view all of their albums
 - Each album has a redirect button that brings the user to the Spotify album page where users can preview the album
