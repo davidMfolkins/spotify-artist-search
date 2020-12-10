@@ -2,6 +2,13 @@
 
 A React single page application (SPA) for searching artists and viewing their albums
 
+!["login"](https://github.com/davidMfolkins/spotify-artist-search/blob/master/spotify-artist-search/docs/loginpage.png?raw=true)
+
+!["searchflow"](https://github.com/davidMfolkins/spotify-artist-search/blob/master/spotify-artist-search/docs/searchflow.gif?raw=true)
+
+!["album"](https://github.com/davidMfolkins/spotify-artist-search/blob/master/spotify-artist-search/docs/albumpage.png?raw=true)
+
+
 ## Functionality
 
 - Users can login to using their spotify account
